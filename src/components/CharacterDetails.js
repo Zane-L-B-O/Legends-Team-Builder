@@ -69,6 +69,10 @@ function CharacterDetails(props) {
               <br/>
               Max Z-Ability: {data.z_ability.four.effect}
             </Typography>
+
+            <Typography variant="body2" color={'goldenrod'}>
+              {data.main_ability.name}: {data.main_ability.effect}
+            </Typography>
             <Typography  variant="body2" color={'red'}>
               {data.rarity === "ULTRA" ? data.ultra_ability.name + ": " : ""}
               {data.rarity === "ULTRA" ? data.ultra_ability.effect : ""}
