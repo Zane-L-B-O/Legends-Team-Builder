@@ -45,23 +45,25 @@ function LegendsCard(props) {
     <Grid container direction="row" justifyContent="space-around" alignItems="flex-start" >
            {data.map((element) => {
                return (
-                <Link to={`/character/${element.id}`}>  
-                <Card>
-                    <CardMedia
-                  sx={{ height: 140 }}
-                  image={element.image_url}
-                  title={element.name}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h6" component="div">
-                    {element.name} ({element.id})
-                  </Typography>
-                  <Typography>
-                  Element:{element.color} Rarity: {element.rarity} 
-                  </Typography>
-                </CardContent>
-                </Card>
-                </Link>
+                <Grid item xs={4}>
+                  <Link to={`/character/${element.id}`}>  
+                    <Card>
+                        <CardMedia
+                      sx={{ height: 140 }}
+                      image={element.image_url}
+                      title={element.name}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h6" component="div">
+                        {element.name} ({element.id})
+                      </Typography>
+                      <Typography>
+                      Element:{element.color} Rarity: {element.rarity} 
+                      </Typography>
+                    </CardContent>
+                    </Card>
+                  </Link>
+                </Grid>
                )
            })}
     </Grid>
