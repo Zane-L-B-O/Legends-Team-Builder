@@ -93,9 +93,13 @@ function CharacterDetails(props) {
               : "" }
             </Typography>
             <Typography>
-              Strike Card: {data.strike} Blast Card: {data.shot} Special Move
-              : {data.special_move.name}: {data.special_move.effect} Special Skill
-              : {data.special_skill.name}: {data.special_skill.effect} 
+              Strike Card: {data.strike} 
+              <br/>
+              Blast Card: {data.shot} 
+              <br/>
+              Special Move: {data.special_move.name}: {data.special_move.effect} 
+              <br/>
+              Special Skill: {data.special_skill.name}: {data.special_skill.effect} 
               <br/>
               {data.ultimate_skill ? "Ultimate Skill: " + data.ultimate_skill.name + ": " : ""}
               {data.ultimate_skill ? data.ultimate_skill.effect : ""}
