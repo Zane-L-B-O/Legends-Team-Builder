@@ -12,17 +12,27 @@ export const worker = setupWorker(
     // Read the "id" URL query parameter using the "URLSearchParams" API.
     // Given "http://localhost:1000/api/v1/?id=1", "id" will equal "1".
     const id = url.searchParams.get('id')
+
+    const fname = url.searchParams.get('fname')
+    console.log("fname: ", fname)
  
+    if (fname) {
+      // find all characters that partially matches search fname
+      const filteredCharacters = characters.filter(element => element.name.toLowerCase().includes(fname.toLowerCase()))
+      console.log("filteredCharacters: ", filteredCharacters)
+      return HttpResponse.json(filteredCharacters)
+    }
+
+    if (id) {
+      // else return the specific character by finding the element with the matching id
+      console.log(id)
+      // with the id, find the character from the characters json
+      const character = characters.find((element) => element.id === id) // fill in the missing logic
+      return HttpResponse.json(character)
+    }
     // Note that query parameters are potentially undefined. If no query is given
     // In that cause return everything
-    if (!id) {
-      return HttpResponse.json(characters)
-    }
-    // else return the specific character by finding the element with the matching id
-    console.log(id)
-    // with the id, find the character from the characters json
-    const character = characters.find((element) => element.id === id) // fill in the missing logic
-    return HttpResponse.json(character)
+    return HttpResponse.json(characters)
   }),
 )
 
