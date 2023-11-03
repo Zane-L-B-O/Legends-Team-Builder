@@ -74,7 +74,7 @@ function CharacterDetails(props) {
               Main Ability: {data.main_ability.name}: {data.main_ability.effect}
             </Typography>
             <Typography  variant="body2" color={'red'}>
-              Ultra Ability: {data.rarity === "ULTRA" ? data.ultra_ability.name + ": " : ""}
+              {data.rarity === "ULTRA" ? "Ultra Ability:" + data.ultra_ability.name + ": " : ""}
               {data.rarity === "ULTRA" ? data.ultra_ability.effect : ""}
             </Typography>
             <Typography>
