@@ -45,7 +45,7 @@ function LegendsCard(props) {
     <Grid container direction="row" justifyContent="space-around" alignItems="flex-start" >
            {data.map((element) => {
                return (
-                <Link to={`/charcter-entry/${element.name}`}>  
+                <Link to={`/character/${element.id}`}>  
                 <Card>
                     <CardMedia
                   sx={{ height: 140 }}
@@ -54,7 +54,7 @@ function LegendsCard(props) {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="div">
-                    {element.name}
+                    {element.name} ({element.id})
                   </Typography>
                   <Typography>
                   Element:{element.color} Rarity: {element.rarity} 
