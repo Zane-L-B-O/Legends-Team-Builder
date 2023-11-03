@@ -69,15 +69,19 @@ function CharacterDetails(props) {
               <br/>
               Max Z-Ability: {data.z_ability.four.effect}
             </Typography>
+
+            <Typography variant="body2" color={'goldenrod'}>
+              Main Ability: {data.main_ability.name}: {data.main_ability.effect}
+            </Typography>
             <Typography  variant="body2" color={'red'}>
-              {data.rarity === "ULTRA" ? data.ultra_ability.name + ": " : ""}
+              Ultra Ability: {data.rarity === "ULTRA" ? data.ultra_ability.name + ": " : ""}
               {data.rarity === "ULTRA" ? data.ultra_ability.effect : ""}
             </Typography>
             <Typography>
               {data.unique_ability.unique_start_abilities.map((element) => {
                 return(
                   <Typography variant='body2' color={'blueviolet'}> 
-                  {element.ability_name}: {element.ability_effect} 
+                  Unique Ability: {element.ability_name}: {element.ability_effect} 
                   </Typography>
                 )
               })}
@@ -86,16 +90,20 @@ function CharacterDetails(props) {
             {data.unique_ability.unique_zenkai_abilities ? data.unique_ability.unique_zenkai_abilities.map((element) => {
                 return(
                   <Typography variant='body2' color={'darkcyan'}> 
-                  {element.ability_name}: {element.ability_effect} 
+                  Zenkai Unique Ability: {element.ability_name}: {element.ability_effect} 
                   </Typography>
                 )
               }) 
               : "" }
             </Typography>
             <Typography>
-              Strike Card: {data.strike} Blast Card: {data.shot} Special Move
-              : {data.special_move.name}: {data.special_move.effect} Special Skill
-              : {data.special_skill.name}: {data.special_skill.effect} 
+              Strike Card: {data.strike} 
+              <br/>
+              Blast Card: {data.shot} 
+              <br/>
+              Special Move: {data.special_move.name}: {data.special_move.effect} 
+              <br/>
+              Special Skill: {data.special_skill.name}: {data.special_skill.effect} 
               <br/>
               {data.ultimate_skill ? "Ultimate Skill: " + data.ultimate_skill.name + ": " : ""}
               {data.ultimate_skill ? data.ultimate_skill.effect : ""}
